@@ -12,7 +12,7 @@ class Users(AbstractUser):
     last_name = models.CharField(max_length=40)  # type: CharField
     roll = models.CharField(max_length=8,unique=True)
     year = models.IntegerField()
-    branch = models.CharField(max_length=2)
+    branch = models.CharField(max_length=2,default="NA")
     section = models.IntegerField()
     
     def __str__(self):
