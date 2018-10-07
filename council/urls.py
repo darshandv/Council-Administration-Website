@@ -22,4 +22,5 @@ app_name = 'council'
 urlpatterns = [
     path('',views.index,name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/',views.signup,name='signup'),
 ]
