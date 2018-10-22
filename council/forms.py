@@ -5,5 +5,5 @@ class UserForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta) :
         model = Users
-        fields = ['first_name', 'last_name', 'roll', 'username',
+        fields = ['first_name', 'last_name', 'roll', 'username', 'is_member',
                   'year', 'branch', 'section']
