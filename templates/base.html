@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+     <meta name="viewport" content="width=device-width, iniial-scale=1">
+
+  </head>
+  <body>
+
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Council Admin Portal</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_logout' %}">Sign Up</a></li>
+            <li><a href="#">Home</a></li>
+
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{% url 'account_login' %}">Login</a></li>
+      <li><a href="{% url 'account_logout' %}">Sign Up</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
+    </ul>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block body_block %}
+
+    {% endblock %}
+
+    <br><br><br><br>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <div class="row">
+             <div class="col">
+               <a href="#" class="grey-text text-lighten-4">Suggestions/Complaints</a>
+             </div>
+             <div class="col">
+               <a href="#" class="grey-text text-lighten-4">Ongoing Work</a>
+             </div>
+            </div>
+            <br>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="footer-copyright">
+        <div class="container">
+        © 2018
+        </div>
+      </div> -->
+    </footer>
+
+<script>
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+</script>
+
+
+  </body>
+</html>
