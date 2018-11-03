@@ -38,3 +38,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 #used to display custom signup form
 ACCOUNT_SIGNUP_FORM_CLASS = 'council.forms.SignupForm'
+
+
+# LOGIN_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL= 'home'
