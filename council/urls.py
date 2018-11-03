@@ -21,6 +21,5 @@ from . import views
 
 
 urlpatterns = [
-        url(r'^', include('allauth.urls' )),
-
+        url(r'^', views.HomeView.as_view(), name='home'),
 ]

@@ -1,8 +1,9 @@
 // Styling for the masthead
+{% load static %}
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('../img/header.jpg');
+  background-image: url("{% static 'img/header.jpg' %}");
   background-position: center center;
   @include background-cover;
   hr {

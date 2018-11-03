@@ -27,3 +27,9 @@ from django.contrib.auth import authenticate,login
 #     form_class = UserForm
 #     template_name = 'council/signup.html'
 #     success_url = reverse_lazy('admin.html')
+
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class HomeView(TemplateView):
+    template_name = "council/index.html"

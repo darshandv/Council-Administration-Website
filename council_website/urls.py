@@ -21,6 +21,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^account/', include('council.urls')),
-    url(r'^$', views.HomeView.as_view(), name='home'),
+    url(r'^account/', include('allauth.urls')),
+    url(r'^', include('council.urls'), name='council'),
 ]
