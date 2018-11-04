@@ -23,7 +23,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 
 # Make email verification mandatory to avoid junk email accounts
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 # Eliminate need to provide username, as it's a very old practice
 ACCOUNT_USERNAME_REQUIRED = False
@@ -37,4 +37,4 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 
 #used to display custom signup form
-ACCOUNT_SIGNUP_FORM_CLASS = 'council.forms.SignupForm'
+ACCOUNT_SIGNUP_FORM_CLASS = 'registration.forms.SignupForm'

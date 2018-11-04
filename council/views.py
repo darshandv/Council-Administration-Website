@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
 from django.contrib.auth import authenticate,login
 
 # Create your views here.
@@ -30,6 +30,19 @@ from django.contrib.auth import authenticate,login
 
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class HomeView(TemplateView):
     template_name = "council/index.html"
+
+def check(request):
+    user = User.objects.get(email=request.user.email)
+    print("I am here\n\n\n")
+    print(request.user)
+    print(request)
+    if user.is_admin:
+        return render(request,'admin.html')
+    else :
+        return redirect(reverse('council:home'))
