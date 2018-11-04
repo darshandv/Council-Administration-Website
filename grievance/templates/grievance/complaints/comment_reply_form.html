@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn waves-effect waves-light">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

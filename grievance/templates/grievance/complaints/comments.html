@@ -1,0 +1,12 @@
+<ul class="collection with-header">
+  {% for comment in comments.all %}
+  {% if comment.parent_comment == None and not comment.author.is_admin %}
+    <li class="collection-item" style="margin:8px;">{% include "grievance/complaints/comment_detail.html" with comment=comment%}</li>
+  {% endif %}
+
+  {% empty %}
+  <p>No comments yet!</p>
+  {% endfor %}
+
+  <a class="waves-effect waves-light btn-small" href="{% url 'grievance:add_comment' post.pk%}">Add Comment</a>
+</ul>

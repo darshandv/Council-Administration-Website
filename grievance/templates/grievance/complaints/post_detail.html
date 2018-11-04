@@ -1,0 +1,60 @@
+
+<div class="card post-detail">
+
+
+
+  <div class="card-content post-detail-content">
+    <div>
+      <span class="card-title">{{post.title}}</span>
+      <div class="chip float right">
+        Implemented
+        {% if post.implemented %}
+        <i class="material-icons right" style="font-size:20px; margin-top:5%;">check</i>
+        {% else %}
+        <i class="material-icons right" style="font-size:20px; margin-top:5%;">clear</i>
+        {% endif %}
+      </div>
+
+    </div>
+    <br>
+    <p>{{post.text}}</p>
+  </div>
+
+
+
+  <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" >Comments<i class="material-icons right" >close</i></span>
+    <div class="reveal-html">
+        {% include "grievance/complaints/comments.html" with comments=post.comments post=post %}
+    </div>
+  </div>
+
+
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a class="upvote com" href="{% url 'grievance:add_upvotes' post.pk %}">Upvote ({{post.upvote}})</a></li>
+      <li class="tab"><a  class="comments activator com">Comments</a></li>
+      <li class="tab"><a class="secretary modal-trigger com" href="#{{post.pk}}">Redressal</a></li>
+    </ul>
+  </div>
+
+  <div id="{{post.pk}}" class="modal">
+  <div class="modal-content">
+    <h4>Council Members Say</h4>
+    {% include "grievance/complaints/redressal.html" with comments=post.comments post=post %}
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay!</a>
+  </div>
+</div>
+
+  <script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
+
+
+
+
+</div>

@@ -14,7 +14,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'grievance/css/base.css' %}">
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -32,8 +32,9 @@
 
            .prim-color{
 
-               background-color:rgba(240, 95, 64, 0.8);
+               background-color:rgb(234, 51, 85);
            }
+
 
        </style>
   </head>
@@ -49,6 +50,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'grievance:post_list' %}">Redressal Forum</a></li>
 
             <li><a href="{% url 'council:home' %}">Home</a></li>
 
@@ -76,30 +78,31 @@
     {% endblock %}
 
     <br><br><br><br>
-    <footer class="page-footer prim-color">
+    <footer class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <div class="row">
-             <div class="col">
-               <a href="#" class="grey-text text-lighten-4">Suggestions/Complaints</a>
-             </div>
-             <div class="col">
-               <a href="#" class="grey-text text-lighten-4">Ongoing Work</a>
-             </div>
-            </div>
-            <br>
-
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
           </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
 
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- <div class="footer-copyright">
+      <div class="footer-copyright">
         <div class="container">
-        © 2018
+        © Students' council 2018
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
-      </div> -->
+      </div>
     </footer>
+
 
 <script>
 $(document).ready(function(){

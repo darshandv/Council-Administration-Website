@@ -1,0 +1,15 @@
+<blockquote class="blockquote mb-0" style="margin-bottom:0px; margin-top:0px;">
+  {% if request.user.is_admin %}
+  <a href="{% url 'grievance:reply_admin' comment.pk %}" class="tooltipped" data-position="top" data-tooltip="Click to reply">{{comment.text}}</a>
+  {% else %}
+  <p>{{comment.text}}</p>
+  {% endif %}
+  <footer class="blockquote-footer"> <cite title="Source Title">- {{comment.author.first_name}} {{comment.author.last_name}}</cite></footer>
+</blockquote>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, options);
+  });
+</script>

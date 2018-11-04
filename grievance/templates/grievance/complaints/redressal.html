@@ -1,0 +1,18 @@
+{% for comment in comments.all %}
+
+{%if comment.author.is_admin %}
+<div class="card">
+  <div class="card-content sec-card" style="padding:0px;">
+    {% include "grievance/complaints/comment_detail.html" with comment=comment %}
+  </div>
+  <div class="card-content sec-card grey lighten-4" style="padding:0px;">
+      <p style="font-style:italic;"> In response to</p>
+      {% include "grievance/complaints/comment_detail.html" with comment=comment.parent_comment%}
+  </div>
+</div>
+{% endif %}
+
+{% empty %}
+<h6>No redressal yet! Please check after some time!</h6>
+
+{%endfor%}

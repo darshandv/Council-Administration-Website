@@ -43,6 +43,6 @@ def check(request):
     print(request.user)
     print(request)
     if user.is_admin:
-        return render(request,'admin.html')
+        return render(request,'council/admin.html')
     else :
         return redirect(reverse('council:home'))

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'council',
     'registration',
+    'grievance',
 ] + ALLAUTH_INSTALLED_APPS
 
 MIDDLEWARE = [
@@ -116,6 +117,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_URL = 'account_login'
 
 
 LOGIN_REDIRECT_URL = 'council:check'
