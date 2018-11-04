@@ -41,6 +41,6 @@ def check(request):
     user = User.objects.get(email=request.user.email)
     print(request.user)
     if user.is_admin:
-        return render(request,'admin.html')
+        return render(request,'council/admin.html')
     else :
         return redirect(reverse('council:home'))

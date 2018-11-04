@@ -24,4 +24,5 @@ urlpatterns = [
     url('^admin/', admin.site.urls),
     url(r'^account/', include('registration.urls')),
     url(r'', include('council.urls'), name='council'),
+    url(r'^grievance/', include('grievance.urls')),
 ]
