@@ -23,4 +23,5 @@ app_name = 'council'
 urlpatterns = [
         url(r'^', views.HomeView.as_view(), name='home'),
         path(r'checkpoint/',views.check,name='check'),
+
 ]
