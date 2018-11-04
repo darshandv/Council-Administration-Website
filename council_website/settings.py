@@ -119,7 +119,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-LOGIN_REDIRECT_URL = '/checkpoint/'
+LOGIN_REDIRECT_URL = 'council:check'
 LOGOUT_REDIRECT_URL = 'council:home'
 
 
