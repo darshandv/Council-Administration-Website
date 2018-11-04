@@ -39,9 +39,7 @@ class HomeView(TemplateView):
 
 def check(request):
     user = User.objects.get(email=request.user.email)
-    print("I am here\n\n\n")
     print(request.user)
-    print(request)
     if user.is_admin:
         return render(request,'admin.html')
     else :
