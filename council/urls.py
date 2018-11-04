@@ -21,7 +21,7 @@ from . import views
 app_name = 'council'
 
 urlpatterns = [
-        url(r'^', views.HomeView.as_view(), name='home'),
-        path(r'checkpoint/',views.check,name='check'),
+        url(r'^$', views.HomeView.as_view(), name='home'),
+        url(r'^checkpoint/',views.check,name='check'),
 
 ]
