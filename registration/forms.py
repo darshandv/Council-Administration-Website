@@ -9,7 +9,7 @@
 #                   'year', 'branch', 'section']
 
 from django.contrib.auth import get_user_model
-from .models import Users
+from .models import User
 from django import forms
 
 class SignupForm(forms.ModelForm):
@@ -17,7 +17,7 @@ class SignupForm(forms.ModelForm):
     # last_name = forms.CharField(max_length=30, label='Last Name', required=True)
 
     class Meta:
-        model = Users
+        model = get_user_model()
         fields = ['first_name', 'last_name', 'roll', 'year', 'branch', 'section']
 
     def signup(self, request, user):

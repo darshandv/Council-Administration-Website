@@ -29,7 +29,8 @@
   <style>
 
       .prim-color{
-          background-color:rgba(240, 95, 64,0.8)  ;
+
+          background-color:rgba(240, 95, 64, 0.8);
       }
 
   </style>
@@ -37,12 +38,14 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper prim-color">
-          <a href="#" class="brand-logo" style="margin-left: 10px;">Council Admin Portal</a>
+
+          <a href="{% url 'council:home' %}" class="brand-logo">Council Admin Portal</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'home' %}">Home</a></li>
+
+            <li><a href="{% url 'council:home' %}">Home</a></li>
 
           </ul>
         </div>
@@ -53,7 +56,9 @@
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{% url 'account_login' %}">Login</a></li>
       <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-      <li><a href="{% url 'home' %}">Home</a></li>
+
+      <li><a href="{% url 'council:home' %}">Home</a></li>
+
     </ul>
 
 
