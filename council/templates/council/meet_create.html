@@ -1,0 +1,21 @@
+{% extends 'council/base.html' %}
+
+{% block body %}
+    <div class="container" style="margin: auto;margin-top: 10px;background: #adb5bd; padding: 100px;">
+
+        <form class=""  method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary btn-lg" name="button">Save</button>
+    </form>
+
+    </div>
+
+
+
+{% endblock %}
+
+

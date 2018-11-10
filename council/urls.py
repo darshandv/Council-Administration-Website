@@ -23,5 +23,9 @@ app_name = 'council'
 urlpatterns = [
         url(r'^$', views.HomeView.as_view(), name='home'),
         url(r'^checkpoint/',views.check,name='check'),
-
+        url(r'admin_page/',views.admin_page, name='admin_page'),
+        url(r'clubCreate/',views.ClubCreateView.as_view(),name='club_create'),
+        url(r'transactionCreate/',views.TransactionCreateView.as_view(),name='transaction_create'),
+        url(r'meetCreate/',views.MeetCreateView.as_view(),name='meet_create'),
+        url(r'getData/',views.get_data, name='get_data'),
 ]
