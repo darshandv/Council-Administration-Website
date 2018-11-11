@@ -1,0 +1,11 @@
+<h1>{{ question.question_year }}</h1>
+
+<ul>
+{% for candidate in question.Candidate_set.all %}
+    <li>{{ candidate.candidate_Name }} -- {{ candidate.votes }} vote{{ candidate.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+

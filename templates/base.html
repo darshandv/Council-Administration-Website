@@ -48,9 +48,15 @@
           <a href="{% url 'council:home' %}" class="brand-logo">Council Admin Portal</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+           
+            <li><a href="{% url 'grievance:post_list' %}">Redressal Forum</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'polls:index' %}">Elections</a></li>
+            {% else %}
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'grievance:post_list' %}">Redressal Forum</a></li>
+            <!-- <li><a href="{% url 'polls:index' %}">Polls</a></li> -->
+            {% endif %}
 
             <li><a href="{% url 'council:home' %}">Home</a></li>
 
@@ -61,9 +67,13 @@
     </div>
 
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="{% url 'account_login' %}">Login</a></li>
-      <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'polls:index' %}">Elections</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Login</a></li>
+        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        <!-- <li><a href="{% url 'polls:index' %}">Polls</a></li> -->
+        {% endif %}
       <li><a href="{% url 'council:home' %}">Home</a></li>
 
     </ul>

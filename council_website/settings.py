@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'council',
     'registration',
     'grievance',
+    'polls'
 ] + ALLAUTH_INSTALLED_APPS
 
 MIDDLEWARE = [
