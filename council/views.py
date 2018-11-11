@@ -13,6 +13,11 @@ User = get_user_model()
 class HomeView(TemplateView):
     template_name = "council/index.html"
 
+    # def get_context_data(self, **kwargs):
+    #     context = super(HomeView, self).get_context_data(**kwargs)
+    #     context['user'] = User.objects.all()
+    #     return context
+
 class ClubCreateView(LoginRequiredMixin,CreateView):
     form_class = ClubCreateForm
     template_name = 'council/club_create.html'
@@ -44,9 +49,9 @@ def check(request):
 
 @login_required
 def admin_page(request):
-    transactions = Transaction.objects.all()
+    transactions = Transaction.objects.all().order_by('-time')
     clubs = Club.objects.all()
-    meets = Meet.objects.all()
+    meets = Meet.objects.all().order_by('-time')
     total_clubs = len(clubs)
     total_transactions = len(transactions)
     total_meets = len(meets)
