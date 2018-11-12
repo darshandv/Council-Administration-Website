@@ -26,6 +26,11 @@ class PostListView(LoginRequiredMixin,ListView):
     def get_queryset(self):
         return Post.objects.all().order_by('-upvote')
 
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        context['user'] = User.objects.filter(email=self.request.user.email)
+        return context
+
 # class AddCommentView(LoginRequiredMixin,CreateView):
 #     model = Comment
 #     form_class = CommentReplyForm

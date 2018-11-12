@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Details</title>
+
+    {% load static %}
+    {% load staticfiles %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,60,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+
+    <style>
+/* FontAwesome for working BootSnippet :> */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #eee !important;
+}
+.card-text{
+  color: black; 
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card { 
+  padding: 60px 60px;
+
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+    min-width: 500px;
+
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+
+    </style>
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Students' Council</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#portfolio">Works</a>
+          </li>
+
+
+          <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+
+              {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="{% url 'grievance:post_list' %}">Redressal Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'account_logout' %}">Logout</a>
+            </li>
+              {% else %}
+            
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'account_signup' %}">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'account_login' %}">Login</a>
+            </li>
+
+            {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+    <header class="masthead text-center text-white d-flex">
+        <div class="container my-auto">
+            
+          
+          
+      <br>            
+          
+            <div class="row">
+                <div class="col-lg-10 ">
+                     {% if user.is_authenticated %}
+
+<!-- <h1 >You are in {{ClassElection.student_year}} /Your Branch is :{{ ClassElection.student_branch }} / Section is : {{ClassElection.student_section}}</h1> -->
+
+                      {% if error_message %}
+                        	<p><strong>{{ error_message }}</strong></p>
+                      {% endif %}
+                        
+                        <div class="container">
+                          <div class="row">
+                              <form action="{% url 'polls:vote' ClassElection.id %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                      {% for candidate in ClassElection.candidate_set.all %}
+                                      <!-- 
+                                          <div class="card">
+                                              <div class="box">
+                                                  <div class="img">
+                                                      <img src="{{candidate.image.url}}">
+                                                  </div>
+                                                  <h2>{{ candidate.Name }}<br><span>Url if any</span></h2>
+                                                  <p> {{ candidate.Tag }} </p>
+                                                 
+                                              </div>
+                                             
+                                          </div> -->
+                                          
+                                            <div class="col-md-6">
+                                                <div class="image-flip" ontouchstart="this.classList.toggle('hover');" style="">
+                                                    <div class="mainflip">
+                                                        <div class="frontside">
+                                                            <div class="card">
+                                                                <div class="card-body text-center">
+                                                                    <p><img class=" img-fluid" src="{{candidate.image.url}}"s alt="card image"></p>
+                                                                    <h4 class="card-title">{{ candidate.Name }}</h4>
+                                                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>   Check vision</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="backside">
+                                                            <div class="card">
+                                                                <div class="card-body text-center mt-4">
+                                                                    <h4 class="card-title">{{ candidate.Name }}</h4>
+                                                                    <p class="card-text">{{ candidate.Tag }}</p>
+                                                                    <input type="radio" style="color:black" name="candidate" id="candidate{{ forloop.counter }}" value="{{ candidate.id }}">
+                                                                    <label for="candidate{{ forloop.counter }}"></label>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+                                          
+                 
+                                    {% endfor %}
+                                            </div>
+
+                                      <input class="btn btn-primary btn-xl js-scroll-trigger" type="submit" value="Vote" style="position: absolute;top: 100%;background: red" >
+                                </form>
+                        </div>
+                        </div>      
+                      </div>
+                 </div>
+            </div>
+    {% endif %}
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/creative.min.js' %}"></script>
+
+  </body>
+
+</html>
+
+
+
+

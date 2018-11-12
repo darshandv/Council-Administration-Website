@@ -18,11 +18,16 @@ from django.urls import path,include
 from django.conf.urls import url
 from . import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
 
     url('^admin/', admin.site.urls),
     url(r'^account/', include('registration.urls')),
-    url(r'', include('council.urls'), name='council'),
+    url(r'^', include('council.urls'), name='council_main'),
     url(r'^grievance/', include('grievance.urls')),
-]
+    url(r'^polls/', include('polls.urls')),
+
+]+ static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
