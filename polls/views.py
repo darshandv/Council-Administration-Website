@@ -18,6 +18,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     latest_question_list = ClassElections.objects.all()
     context = {}
+    voted = False
     
     if request.user.is_authenticated and not request.user.is_superuser:
         try:
