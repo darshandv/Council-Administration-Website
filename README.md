@@ -14,7 +14,7 @@ git clone https://github.com/darshandv/Council-Administration-Website.git
 ```
 Then inside the directory with virtual environment activated run these commands in the terminal -
 ``` python
-pip install requirements.txt
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
