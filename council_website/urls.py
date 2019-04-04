@@ -28,6 +28,5 @@ urlpatterns = [
     url(r'^account/', include('registration.urls')),
     url(r'^', include('council.urls'), name='council_main'),
     url(r'^grievance/', include('grievance.urls')),
-    url(r'^polls/', include('polls.urls')),
 
 ]+ static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)

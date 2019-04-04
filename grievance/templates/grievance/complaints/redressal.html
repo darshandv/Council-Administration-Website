@@ -1,6 +1,9 @@
 {% for comment in comments.all %}
 
+
 {%if comment.author.is_admin %}
+
+{% if comment.parent_comment %}
 <div class="card">
   <div class="card-content sec-card" style="padding:0px;">
     {% include "grievance/complaints/comment_detail.html" with comment=comment %}
@@ -10,6 +13,19 @@
       {% include "grievance/complaints/comment_detail.html" with comment=comment.parent_comment%}
   </div>
 </div>
+
+
+{% else%}
+
+<div class="card">
+  <div class="card-content sec-card" style="padding:0px;">
+    {% include "grievance/complaints/comment_detail.html" with comment=comment %}
+  </div>
+
+</div>
+
+{% endif %}
+
 {% endif %}
 
 {% empty %}

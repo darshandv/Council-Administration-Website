@@ -45,12 +45,12 @@
       <nav>
         <div class="nav-wrapper prim-color">
 
-          <a href="{% url 'council:home' %}" class="brand-logo">Council Admin Portal</a>
+          <a href="{% url 'council:home' %}" class="brand-logo">Council Administration Portal</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
            
             <li><a href="{% url 'grievance:post_list' %}">Redressal Forum</a></li>
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
             <li><a href="{% url 'polls:index' %}">Elections</a></li>
             {% else %}
             <li><a href="{% url 'account_login' %}">Login</a></li>
@@ -69,6 +69,8 @@
     <ul class="sidenav" id="mobile-demo">
         {% if user.is_authenticated %}
         <li><a href="{% url 'polls:index' %}">Elections</a></li>
+        <li><a href="{% url 'polls:index' %}">Elections</a></li>
+
         {% else %}
         <li><a href="{% url 'account_login' %}">Login</a></li>
         <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
