@@ -1,7 +1,6 @@
 # Council-Administration-Website
 This is a django website developed for Council Administration Purposes.
 
-The website is hosted. You can take a look at it here - [Website link](darshandv.pythonanywhere.com)
 ### Steps to Reproduce
 Before starting please make sure that you have following installed and working properly.
 - Python - 3.6
