@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView,TemplateView
 from django.urls import reverse, reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
 from .forms import *
 from .models import *
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Permission
+
 import json
 
 User = get_user_model()
@@ -18,7 +20,8 @@ class HomeView(TemplateView):
     #     context['user'] = User.objects.all()
     #     return context
 
-class ClubCreateView(LoginRequiredMixin,CreateView):
+class ClubCreateView(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    # permission_required = 'club.can_add_club'
     form_class = ClubCreateForm
     template_name = 'council/club_create.html'
     model = Club
@@ -37,18 +40,12 @@ class MeetCreateView(LoginRequiredMixin,CreateView):
     model = Meet
     success_url = reverse_lazy('council:check')
 
-@login_required
-def check(request):
-    user = User.objects.get(email=request.user.email)
-    print(request.user)
-    if user.is_admin:
-        return redirect(reverse('council:admin_page'))
-    else :
-        return redirect(reverse('council:home'))
-
 
 @login_required
 def admin_page(request):
+    print(request.user)
+    permissions = Permission.objects.filter(user = request.user)
+    print(permissions)
     transactions = Transaction.objects.all().order_by('-time')
     clubs = Club.objects.all()
     meets = Meet.objects.all().order_by('-time')

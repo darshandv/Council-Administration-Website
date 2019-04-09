@@ -124,7 +124,7 @@ USE_TZ = True
 LOGIN_URL = 'account_login'
 
 
-LOGIN_REDIRECT_URL = 'council:check'
+LOGIN_REDIRECT_URL = 'authorization:check'
 LOGOUT_REDIRECT_URL = 'council:home'
 
 

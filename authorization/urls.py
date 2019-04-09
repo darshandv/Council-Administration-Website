@@ -14,20 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
 from django.conf.urls import url
+from django.urls import path,include
 from . import views
 
-from django.conf import settings
-from django.conf.urls.static import static
-
+app_name = 'authorization'
 
 urlpatterns = [
-
-    url('^admin/', admin.site.urls),
-    url(r'^account/', include('registration.urls')),
-    url(r'^', include('council.urls'), name='council_main'),
-    url(r'^grievance/', include('grievance.urls')),
-    url(r'^checkpoint/', include('authorization.urls')),
-
-]+ static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
+        url(r'',views.check,name='check'),
+]
