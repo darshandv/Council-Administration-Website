@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixi
 from .forms import *
 from .models import *
 from django.contrib.auth import get_user_model
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,permission_required
 from django.contrib.auth.models import Permission
 
 import json
@@ -21,20 +21,21 @@ class HomeView(TemplateView):
     #     return context
 
 class ClubCreateView(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
-    # permission_required = 'club.can_add_club'
+    permission_required = 'council.add_club'
     form_class = ClubCreateForm
     template_name = 'council/club_create.html'
     model = Club
     success_url = reverse_lazy('council:check')
 
-
-class TransactionCreateView(LoginRequiredMixin,CreateView):
+class TransactionCreateView(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'council.add_transaction'
     form_class = TransactionCreateForm
     template_name = 'council/transaction_create.html'
     model = Transaction
     success_url = reverse_lazy('council:check')
 
-class MeetCreateView(LoginRequiredMixin,CreateView):
+class MeetCreateView(LoginRequiredMixin,PermissionRequiredMixin, CreateView):
+    permission_required = 'council.add_meet'
     form_class = MeetCreateForm
     template_name = 'council/meet_create.html'
     model = Meet
@@ -43,9 +44,6 @@ class MeetCreateView(LoginRequiredMixin,CreateView):
 
 @login_required
 def admin_page(request):
-    print(request.user)
-    permissions = Permission.objects.filter(user = request.user)
-    print(permissions)
     transactions = Transaction.objects.all().order_by('-time')
     clubs = Club.objects.all()
     meets = Meet.objects.all().order_by('-time')

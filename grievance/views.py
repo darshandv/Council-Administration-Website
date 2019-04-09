@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from .models import Post, Event, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
@@ -14,11 +14,12 @@ from .forms import CommentReplyForm, AddPostForm
 from django.http import HttpResponseRedirect
 
 from django.urls import reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 User = get_user_model()
 # Create your views here.
 
-class PostListView(LoginRequiredMixin,ListView):
+class PostListView(LoginRequiredMixin,PermissionRequiredMixin,ListView):
+    permission_required = 'grievance.view_post'
     model = Post
     context_object_name = 'posts'
     template_name = 'grievance/complaints/posts.html'
@@ -36,7 +37,8 @@ class PostListView(LoginRequiredMixin,ListView):
 #     form_class = CommentReplyForm
 #     template_name = 'grievance/complaints/comment_reply_form.html'
 
-class PostCreateView(LoginRequiredMixin,CreateView):
+class PostCreateView(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'grievance.add_post'
     form_class = AddPostForm
     template_name = 'grievance/complaints/post_form.html'
     model = Post
@@ -56,6 +58,7 @@ class PostCreateView(LoginRequiredMixin,CreateView):
 #     template_name = 'blog/events/events.html'
 
 @login_required
+@permission_required('grievance.add_comment')
 def admin_reply_comment(request, pk):
     parent = get_object_or_404(Comment, pk=pk)
     post = parent.post
@@ -72,7 +75,7 @@ def admin_reply_comment(request, pk):
         form = CommentReplyForm()
     return render(request, 'grievance/complaints/comment_reply_form.html', {'form': form})
 
-
+@permission_required('grievance.add_comment')
 def add_comment_view(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     if request.method == "POST":
@@ -91,6 +94,7 @@ def add_comment_view(request, post_id):
 
 
 @login_required
+@permission_required('grievance.view_post')
 def add_upvotes(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     post.upvote += 1
