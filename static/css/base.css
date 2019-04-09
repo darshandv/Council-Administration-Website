@@ -1,0 +1,129 @@
+.post-detail{
+  width:100;
+  height:200px;
+}
+
+
+@viewport {
+  width:device-width;
+  zoom: 1.0;
+}
+
+
+}
+.brand-logo{
+padding-left:10px;
+}
+
+.sec-card{
+  padding:0px;
+}
+.com{
+  cursor: pointer;
+}
+.post-detail-title{
+  margin:2% 5% 2% 5%;
+}
+
+.post-detail-content{
+  height:65%;
+}
+.text-usage{
+  margin:0 5% 0 5%;
+}
+
+.sec-card{
+  padding:0px;
+}
+
+.suggestions-text{
+  width:100%;
+  border:5px solid rgb(244, 66, 92);
+  border-radius:10px;
+}
+
+.tdm-img{
+  width:500px;
+  border:solid 2px red;
+  height:60%;
+}
+
+.tdm-con-img2{
+  width:100%;
+  height:60%;
+}
+
+body{
+/*      background-image: url('nitk.jpg');
+*/  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tdm-sec1{
+  border:solid 2px orange;
+  height:250px;
+  background-color: white;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius:10px;
+}
+
+.tdm-sec2{
+  border:solid 2px red;
+  height:250px;
+  background-color: white;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius:10px;
+}
+
+.tdm-sec3{
+  border:solid 2px black;
+  height:250px;
+  background-color: white;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius:10px;
+
+}
+
+.tdm-row2{
+  width: 100%;
+  padding-left:5%;
+  border: solid 2px green;
+
+}
+
+.tdm-new-con{
+   height:70%;
+   width:100%;
+   background-color: #FF896D;
+}
+
+.in-tdm-con{
+  margin-left: 4%;
+  margin-top: 3%;
+
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+.tdm-profile{
+  height:400px;
+  width: 400px;
+  /*margin-left: 35%;*/
+}
+
+.tdm-profile img{
+  margin-top: 5%;
+  border-radius: 50%;
+}
